@@ -40,3 +40,4 @@ You should see this output when everything works correctly.
 # Setting Up Kube State Metrics
 1.Kube state metrics service will provide many metrics which is not available by default. Please make sure you deploy Kube state metrics to monitor all your kubernetes API objects like deployments, pods, jobs, cronjobs etc. 
 
+
