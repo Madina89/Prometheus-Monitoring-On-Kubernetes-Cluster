@@ -4,7 +4,7 @@ How to Setup Prometheus Monitoring On Kubernetes Cluster
   1.  First Create a Namespace Kubernetes namespace for all our monitoring components.  `kubectl create namespace monitoring`
   2.  Create a file named clusterRole   `kubectl create -f clusterRole.yaml`
   3.  Create a file called config-map `kubectl create -f config-map.yaml`
-  4. Create a deployment on monitoring namespace and  Create a file named prometheus-deployment `kubectl create  -f prometheus-deployment.yaml`
+  4.  Create a deployment on monitoring namespace and  Create a file named prometheus-deployment `kubectl create  -f prometheus-deployment.yaml`
   5. You can check the created deployment using the following command  `kubectl get deployments --namespace=monitoring`
  
  # Connecting To Prometheus Dashboard
@@ -14,11 +14,11 @@ How to Setup Prometheus Monitoring On Kubernetes Cluster
               
  # Using Kubectl port forwarding
 Using kubectl port forwarding, you can access the pod from your workstation using a selected port on your localhost.
- 1.First, get the Prometheus pod name `kubectl get pods --namespace=monitoring`
- 2.The output will look like the following:
-      kubectl get pods --namespace=monitoring
-NAME                                     READY   STATUS    RESTARTS   AGE
-prometheus-deployment-56f854c695-5pspk   1/1     Running   0          2d19h
+ 1. First, get the Prometheus pod name `kubectl get pods --namespace=monitoring`
+ 2. The output will look like the following:
+      `kubectl get pods --namespace=monitoring`
+`NAME                                     READY   STATUS    RESTARTS   AGE`
+`prometheus-deployment-56f854c695-5pspk   1/1     Running   0          2d19h`
 3. Execute the following command with your pod name to access Prometheus from localhost port 8080.
 Note: Replace prometheus-monitoring-3331088907-hm5n1 with your pod name.
 `kubectl port-forward prometheus-monitoring-3331088907-hm5n1 8080:9090 -n monitoring`
