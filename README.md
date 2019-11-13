@@ -20,7 +20,7 @@ Using kubectl port forwarding, you can access the pod from your workstation usin
 NAME                                     READY   STATUS    RESTARTS   AGE
 prometheus-deployment-56f854c695-5pspk   1/1     Running   0          2d19h
 3. Execute the following command with your pod name to access Prometheus from localhost port 8080.
-# Note: Replace prometheus-monitoring-3331088907-hm5n1 with your pod name.
+Note: Replace prometheus-monitoring-3331088907-hm5n1 with your pod name.
 `kubectl port-forward prometheus-monitoring-3331088907-hm5n1 8080:9090 -n monitoring`
 4. Now, if you access http://localhost:8080 on your browser, you will get the Prometheus home page.
 
@@ -36,8 +36,7 @@ You should see this output when everything works correctly.
 <img width="1259" alt="Screenshot 2019-11-13 at 2 56 51 PM" src="https://user-images.githubusercontent.com/50155760/68804249-eba1e100-0626-11ea-88fa-17b330d25a42.png">
 6.Now if you browse to status --> Targets, you will see all the Kubernetes endpoints connected to Prometheus automatically using service discovery as shown below. So you will get all kubernetes container and node metrics in Prometheus.
 <img width="1248" alt="Screenshot 2019-11-13 at 2 57 36 PM" src="https://user-images.githubusercontent.com/50155760/68804319-17bd6200-0627-11ea-9533-3c1220c96c43.png">
-7.You can head over the homepage and select the metrics you need from the drop-down and get the graph for the time range you mention. An example graph for container memory utilization is shown below.
-# Setting Up Kube State Metrics
-1.Kube state metrics service will provide many metrics which is not available by default. Please make sure you deploy Kube state metrics to monitor all your kubernetes API objects like deployments, pods, jobs, cronjobs etc. 
+7. You can head over the homepage and select the metrics you need from the drop-down and get the graph for the time range you mention. An example graph for container memory utilization is shown below.
+8. Setting Up Kube State Metrics. Kube state metrics service will provide many metrics which is not available by default. Please make sure you deploy Kube state metrics to monitor all your kubernetes API objects like deployments, pods, jobs, cronjobs etc. 
 
 
